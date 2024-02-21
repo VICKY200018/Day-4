@@ -1,0 +1,122 @@
+// Own resume data in JSON format
+
+{
+    "personal_info": {
+      "name": "SANDHA VIGNESH G M",
+      "address": "No,3, Varadhappa Naidu Street, Thirupathiripuliyur, Cuddalore,607002 ",
+      "phone": "+91 9080802132",
+      "email": "vickygangadharan@gmail.com",
+      "github": "github.com/VICKY200018"
+    };
+    "education": [
+        {
+          "degree": "Master of Business Administration",
+          "school": "Manakula Vinayagar Institute of Technology",
+          "graduation_year": 2023
+        }
+      ],
+      "experience": [
+        {
+          "position": "Relationship Executive",
+          "company": "ICICI PRU AMC",
+          "location": "Villupuram",
+          "start_date": "July 2023",
+          "end_date": "Present",
+          "responsibilities": [
+            "Developing and maintaining relationship with customers and investors.",
+            "working towards the targets.",
+          ]
+        }
+      ],
+      "skills": [
+        "Communication Skills",
+        "Interpersonal Skills",
+        "Problem Solving",
+        "Product/Service Knowledge",
+        "Time Management",
+        "Customer Focus",
+        "Networking"
+      ]
+    }
+
+    //For the above JSON, iterate over all for loops (for, for in, for of ,forEach)
+
+    // Using a traditional "for" loop:
+
+    const resumeData = {
+        "personal_info": {
+            "name": "SANDHA VIGNESH G M",
+            "address": "No,3, Varadhappa Naidu Street, Thirupathiripuliyur, Cuddalore,607002 ",
+            "phone": "+91 9080802132",
+            "email": "vickygangadharan@gmail.com",
+            "github": "github.com/VICKY200018"
+          };
+          "education": [
+              {
+                "degree": "Master of Business Administration",
+                "school": "Manakula Vinayagar Institute of Technology",
+                "graduation_year": 2023
+              }
+            ],
+            "experience": [
+              {
+                "position": "Relationship Executive",
+                "company": "ICICI PRU AMC",
+                "location": "Villupuram",
+                "start_date": "July 2023",
+                "end_date": "Present",
+                "responsibilities": [
+                  "Developing and maintaining relationship with customers and investors.",
+                  "working towards the targets.",
+                ]
+              }
+            ],
+            "skills": [
+              "Communication Skills",
+              "Interpersonal Skills",
+              "Problem Solving",
+              "Product/Service Knowledge",
+              "Time Management",
+              "Customer Focus",
+              "Networking"
+            ]
+          }
+
+          // Iterate over keys in personal_info
+          for (const key in resumeData.personal_info) {
+            console.log(key, ":", resumeData.personal_info[key]);
+          }
+
+          // Iterate over skills array
+          for (let i = 0; i < resumeData.skills.length; i++) {
+            console.log("Skill:", resumeData.skills[i]);
+          }
+
+          // Using for...in loop:
+
+          for (const key in resumeData.personal_info) {
+            console.log(key, ":", resumeData.personal_info[key]);
+          }
+          
+          for (const skill of resumeData.skills) {
+            console.log("Skill:", skill);
+
+          // Using for...of loop:
+
+          for (const [key, value] of Object.entries(resumeData.personal_info)) {
+            console.log(key, ":", value);
+          }
+          
+          for (const skill of resumeData.skills) {
+            console.log("Skill:", skill);
+          }
+
+          // Using forEach:
+
+          Object.entries(resumeData.personal_info).forEach(([key, value]) => {
+            console.log(key, ":", value);
+          });
+          
+          resumeData.skills.forEach(skill => {
+            console.log("Skill:", skill);
+          });
